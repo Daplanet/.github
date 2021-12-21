@@ -48,3 +48,8 @@ jobs:
         with:
           image: "${{ github.repository }}:latest"
           fail-build: false
+
+      - name: GitGaurdian scan image
+        uses: GitGuardian/gg-shield-action@master
+        with:
+          args: "docker ${{ github.repository }}:latest"
